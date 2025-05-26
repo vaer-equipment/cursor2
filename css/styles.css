@@ -1,0 +1,699 @@
+/* Basic CSS Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Basic Typography */
+html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+    height: 100%;
+}
+
+/* Slider Styles */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 40px auto;
+    overflow: hidden;
+    aspect-ratio: 16/9;
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    height: 100%;
+}
+
+.slide {
+    flex: 0 0 100%;
+    height: 100%;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 48px;
+    height: 48px;
+    background: rgba(0, 0, 0, 0.5);
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    transition: background-color 0.3s ease;
+    z-index: 2;
+}
+
+.slider-arrow:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.slider-arrow.prev {
+    left: 20px;
+}
+
+.slider-arrow.next {
+    right: 20px;
+}
+
+.slider-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background: white;
+}
+
+/* Mobile Styles for Slider */
+@media (max-width: 768px) {
+    .slider-arrow {
+        display: none; /* Hide arrows on mobile */
+    }
+    
+    .slider-container {
+        touch-action: pan-y pinch-zoom; /* Enable vertical scroll */
+    }
+}
+/* Add animation keyframes */
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+body {
+    font-family: 'Exo', sans-serif;
+    line-height: 1.6;
+    color: #ffffff;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    min-height: 100%; /* Change from height to min-height */
+    overflow-y: auto;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+p {
+    margin-bottom: 15px;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    border-bottom: 1px solid #444;
+    z-index: 1000;
+    height: 80px;
+}
+
+.header-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 60px; /* Increase padding to accommodate hamburger */
+    height: 80px; /* Set explicit height */
+}
+
+.header-container::before {
+    display: none; /* Remove on all screen sizes */
+}
+
+.logo-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1003;
+    height: 100%;
+    padding: 10px 0;
+}
+
+.logo-container a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#logo {
+    height: 70px; /* Increase height slightly */
+    width: auto;
+    display: block;
+    opacity: 1; /* Ensure logo is visible */
+    object-fit: contain;
+}
+
+/* Navigation */
+nav {
+    margin-left: auto; /* Change from flex: 1 */
+    display: flex;
+    justify-content: flex-end;
+    height: 100%; /* Match header height */
+    align-items: center; /* Center items vertically */
+    position: relative; /* Add this */
+    z-index: 1002; /* Update z-index */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+    position: relative;
+    padding: 5px 0;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffffff;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #ffffff;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Hamburger Menu - Desktop Hidden */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 35px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1004; /* Increase z-index */
+    pointer-events: all; /* Add this */
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background: #ffffff;
+    border-radius: 3px;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* Match menu timing */
+    display: block;
+}
+
+/* Hamburger Active State */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(11px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(-20px);
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-11px) rotate(-45deg);
+}
+
+/* Main Content */
+main {
+    margin-bottom: 0;
+    padding-top: 80px; /* Add padding to account for fixed header */
+}
+
+section {
+    height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Change back to center */
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: 0; /* Remove padding-top since main handles it */
+}
+
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    background-color: #111;
+}
+
+.product-section {
+    background-color: #000;
+}
+
+.eker-design-section {
+    background-color: #111;
+}
+
+.eker-content {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Change to horizontal centering */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-content {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto; /* Change to horizontal centering */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    overflow: visible;
+}
+
+/* Add product-content styles */
+.product-content {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    text-align: center;
+}
+
+/* Styles consolidated above */
+
+.hero-image {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    margin: 30px 0;
+    border-radius: 5px;
+}
+
+/* Product Section */
+
+.product-grid {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto; /* Change to horizontal centering */
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    align-content: center;
+}
+
+.product-card {
+    background-color: #111;
+    border-radius: 5px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-info {
+    padding: 20px;
+}
+
+/* Eker Design Section */
+
+.eker-item {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.eker-image {
+    width: 40%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.eker-text {
+    width: 60%;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    .header-container {
+        padding: 0 20px;
+    }
+
+    /* Make sure nav doesn't block hamburger */
+    .logo-container {
+        width: auto; /* Remove fixed width */
+    }
+
+    #logo {
+        height: 55px; /* Increase mobile height slightly */
+    }
+
+    nav {
+        position: static;
+        width: auto;
+        margin-left: 0;
+    }
+
+    /* Show hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Add before nav ul */
+    .nav-overlay {
+        display: none;
+        position: fixed;
+        top: 80px; /* Match header height */
+        left: 0;
+        width: 100%;
+        height: calc(100vh - 80px); /* Subtract header height */
+        background: rgba(0, 0, 0, 0.6); /* Slightly darker overlay */
+        opacity: 0;
+        transition: opacity 0.3s ease, /* Make overlay fade faster */
+                  visibility 0s linear 0.4s;
+        z-index: 999; /* Lower than header but above content */
+        pointer-events: none; /* Add this */
+    }
+
+    .nav-overlay.active {
+        display: block;
+        opacity: 1;
+        pointer-events: auto; /* Add this */
+        transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  visibility 0s linear;
+    }
+
+    /* Update nav ul styles */
+    nav ul {
+        position: fixed;
+        top: 80px; /* Match header height */
+        right: 0;
+        width: 70%;
+        height: calc(100vh - 80px); /* Subtract header height */
+        background: rgba(0, 0, 0, 0.98);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 40px 20px; /* Reduce padding */
+        transform: translateX(100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        z-index: 1002; /* Higher than overlay but lower than logo */
+        margin: 0;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-left: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+    
+    /* Add menu background support */
+    @supports not (backdrop-filter: blur(10px)) {
+        nav ul {
+            background: rgba(0, 0, 0, 0.98);
+        }
+    }
+
+    /* Update nav ul active state */
+    nav ul.active {
+        transform: translateX(0);
+        opacity: 1;
+        visibility: visible;
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+                  opacity 0.3s ease; /* Smoother fade in */
+    }
+
+    /* Update nav items styling */
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 10px 0;
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 0.3s ease;
+    }
+
+    nav ul.active li {
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 0.3s ease;
+    }
+
+    /* Sequential delays */
+    nav ul.active li:nth-child(1) { transition-delay: 0.05s; }
+    nav ul.active li:nth-child(2) { transition-delay: 0.1s; }
+    nav ul.active li:nth-child(3) { transition-delay: 0.15s; }
+    
+    nav a {
+        font-size: 1.2rem;
+        padding: 12px 20px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        border-radius: 5px;
+        transition: all 0.3s ease;
+    }
+
+    nav a:hover {
+        background: rgba(255, 255, 255, 0.1);
+    }
+
+    nav a::after {
+        display: none; /* Remove underline effect on mobile */
+    }
+
+
+    /* Update section padding */
+    section {
+        padding: 0 15px; /* Only horizontal padding */
+    }
+
+    /* Content padding */
+    .hero-content,
+    .eker-content,
+    .product-content,
+    .product-grid {
+        padding: 20px 0; /* Remove horizontal padding since section has it */
+    }
+
+
+    /* Product Grid */
+    .product-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Eker Design Items */
+    .eker-item {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .eker-image, .eker-text {
+        width: 100%;
+    }
+
+    /* Typography */
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    /* Spacing */
+    .hero-image {
+        margin: 20px 0;
+    }
+
+    .product-card {
+        margin-bottom: 0; /* Remove margin since grid gap handles spacing */
+    }
+
+    /* Footer */
+    footer {
+        padding: 60px 15px 30px;
+        height: auto;
+        min-height: calc(100vh - 80px);
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .header-container {
+        padding: 0 15px;
+    }
+
+    .hamburger {
+        right: 15px;
+        width: 30px; /* Smaller size for mobile */
+    }
+
+    .hamburger span {
+        width: 30px;
+    }
+
+    /* Update hamburger animation for smaller size */
+    .hamburger.active span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg); /* Adjust translation */
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg); /* Adjust translation */
+    }
+
+    section {
+        padding: 0 10px; /* Only horizontal padding */
+    }
+
+    .hero-content,
+    .eker-content,
+    .product-content,
+    .product-grid {
+        padding: 15px 0;
+    }
+
+    nav ul {
+        width: 80%;
+        padding: 30px 15px;
+    }
+
+    nav a {
+        padding: 10px 15px;
+        font-size: 1.1rem;
+    }
+    
+    /* Remove lines 506-510 since they're now handled above */
+
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+}
+
+/* Footer */
+footer {
+    border-top: 1px solid #444;
+    padding: 80px 20px 40px;
+    text-align: center;
+    color: #aaa;
+    height: calc(100vh - 80px); /* Subtract header height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+/* Add eker-items styles */
+.eker-items {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    margin-top: 40px;
+}
+
+@media (max-width: 768px) {
+    .eker-items {
+        gap: 40px;
+        margin-top: 30px;
+    }
+}
+

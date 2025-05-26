@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VÆR</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+<header>
+    <div class="nav-overlay"></div>
+    <div class="header-container">
+        <div class="logo-container">
+            <a href="#">
+                <img src="content/logo.png" alt="VÆR Logo" id="logo">
+            </a>
+        </div>
+
+        <button class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="#">Hjem</a></li>
+                <li><a href="#">ADAPTA</a></li>
+                <li><a href="#">Eker Design</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<main>
+    <!-- Hero/Teaser Section -->
+    <section class="hero-section container">
+        <div class="hero-content">
+            <h1>Discover Innovation</h1>
+            <p>Experience cutting-edge design and technology that transforms the way you interact with the world.</p>
+            <img src="https://picsum.photos/1200/600" alt="Hero Image" class="hero-image">
+            <p>Our vision is to create products that not only meet but exceed your expectations, blending aesthetics with functionality.</p>
+        </div>
+    </section>
+    
+    <!-- Product Section -->
+    <section class="product-section container">
+        <div class="product-content">
+            <h2>Our Products</h2>
+            <p>Explore our range of innovative products designed to enhance your everyday experience.</p>
+            
+            <div class="slider-container">
+                <div class="slider">
+                    <div class="slide"><img src="content/product1.jpg" alt="Product 1"></div>
+                    <div class="slide"><img src="content/product2.jpg" alt="Product 2"></div>
+                    <div class="slide"><img src="content/product3.jpg" alt="Product 3"></div>
+                </div>
+                
+                <button class="slider-arrow prev" aria-label="Previous slide">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" stroke="currentColor" stroke-width="2" d="M15 6l-6 6 6 6"/>
+                    </svg>
+                </button>
+                <button class="slider-arrow next" aria-label="Next slide">
+                    <svg viewBox="0 0 24 24" width="24" height="24">
+                        <path fill="none" stroke="currentColor" stroke-width="2" d="M9 6l6 6-6 6"/>
+                    </svg>
+                </button>
+                
+                <div class="slider-dots">
+                    <button class="dot active" aria-label="Go to slide 1"></button>
+                    <button class="dot" aria-label="Go to slide 2"></button>
+                    <button class="dot" aria-label="Go to slide 3"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Eker Design Section -->
+    <section class="eker-design-section container">
+        <div class="eker-content">
+            <h2>Eker Design</h2>
+            <p>We believe that great design should be at the heart of everything we create.</p>
+            
+            <div class="eker-items">
+                <div class="eker-item">
+                    <img src="https://picsum.photos/500/350?random=4" alt="Design Process" class="eker-image">
+                    <div class="eker-text">
+                        <h3>Our Design Philosophy</h3>
+                        <p>At Eker Design, we approach each project with a commitment to excellence and innovation. Our team of designers works tirelessly to create products that are not only visually stunning but also functional and user-friendly.</p>
+                        <p>We combine traditional craftsmanship with modern technology to deliver results that stand the test of time.</p>
+                    </div>
+                </div>
+                
+                <div class="eker-item">
+                    <div class="eker-text">
+                        <h3>Sustainable Approach</h3>
+                        <p>Sustainability is at the core of our design process. We carefully select materials and production methods that minimize environmental impact without compromising on quality or aesthetics.</p>
+                        <p>Our commitment to sustainability extends beyond our products to every aspect of our business operations.</p>
+                    </div>
+                    <img src="https://picsum.photos/500/350?random=5" alt="Sustainable Design" class="eker-image">
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 My Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/slider.js"></script>
+</body>
+</html>
