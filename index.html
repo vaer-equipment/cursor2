@@ -6,7 +6,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="content/favicon.ico">
     <link rel="apple-touch-icon" href="content/favicon.ico">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VÆR - Innovativ Designløsninger</title>
+    <title>VÆR - La opplevelsene fylle sekken</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo:wght@400;700&display=swap" rel="stylesheet">
@@ -29,9 +29,9 @@
         </button>
         <nav>
             <ul>
-                <li><a href="#">Hjem</a></li>
-                <li><a href="#">ADAPTA</a></li>
-                <li><a href="#">Eker Design</a></li>
+                <li><a href="#hero">Hjem</a></li>
+                <li><a href="#adapta">ADAPTA</a></li>
+                <li><a href="#eker-design">Eker Design</a></li>
             </ul>
         </nav>
     </div>
@@ -39,21 +39,24 @@
 
 <main>
     <!-- Hero/Teaser Section -->
-    <section class="hero-section">
+         <!-- dette er en test123 -->
+    <section id="hero" class="hero-section">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1>Opplev Innovasjon</h1>
-            <p>Oppdag banebrytende design og opplevelser som forandrer måten du samhandler med verden.</p>
-            <p>Vår visjon er å skape produkter som ikke bare møter, men overgår dine forventninger, og kombinerer estetikk med funksjonalitet.</p>
+            <h1>OPPLEV MER,&#10;MED MINDRE</h1>
+            <p>Ekstremt turutstyr som gjør børen mindre og lettere</p>
+            <p>La opplevelsene fylle sekken</p>
         </div>
     </section>
     
     <!-- Product Section -->
-    <section class="product-section container">
+    <section id="adapta" class="product-section container">
         <div class="product-content">
-            <h2>Våre Produkter</h2>
-            <p>Utforsk vårt utvalg av innovative produkter designet for å berike din hverdag.</p>
-            
+            <h2>Møt ADAPTA</h2>
+            <p>ADAPTA er ett produkt som tilpasser seg deg når du er ute. Den revolusjonerende geometrien leverer deg søvn, tørt tøy og varme når du trenger det. Designet for at du er klar for tur kun med mat og sovepose</p>
+            <a href="https://hg896jz-kg.myshopify.com" class="purchase-button">Les mer og kjøp nå</a>
+        </div>
+        <div class="product-grid">
             <div class="slider-container">
                 <div class="slider">
                     <div class="slide"><img src="content/product1.jpg" alt="Product 1"></div>
@@ -82,39 +85,21 @@
     </section>
     
     <!-- Eker Design Section -->
-    <section class="eker-design-section container">
+    <section id="eker-design" class="eker-design-section container">
+        <div class="video-background">
+            <video autoplay muted loop playsinline preload="auto" class="background-video">
+                <source src="content/video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+        </div>
         <div class="eker-content">
-            <h2>Eker Design</h2>
-            <p>We believe that great design should be at the heart of everything we create.</p>
-            
-            <div class="eker-items">
-                <div class="eker-item">
-                    <img src="content/design-process.jpg" alt="Design Prosess" class="eker-image">
-                    <div class="eker-text">
-                        <h3>Vår Design Filosofi</h3>
-                        <p>Hos Eker Design tilnærmer vi oss hvert prosjekt med fokus på kvalitet og innovasjon. Vårt team av designere jobber utrettelig for å skape produkter som ikke bare er visuelt imponerende, men også funksjonelle og brukervennlige.</p>
-                        <p>Vi kombinerer tradisjonelt håndverk med moderne teknologi for å levere resultater som tåler tidens test.</p>
-                    </div>
-                </div>
-                
-                <div class="eker-item">
-                    <div class="eker-text">
-                        <h3>Sustainable Approach</h3>
-                        <p>Sustainability is at the core of our design process. We carefully select materials and production methods that minimize environmental impact without compromising on quality or aesthetics.</p>
-                        <p>Our commitment to sustainability extends beyond our products to every aspect of our business operations.</p>
-                    </div>
-                    <img src="content/sustainable-design.jpg" alt="Bærekraftig Design" class="eker-image">
-                </div>
-            </div>
+            <img src="content/eker.png" alt="Eker Design" class="eker-logo">
+            <p>PASSION POWERS PROGRESS</p>
+            <p>Eker Design har vært VÆR sin partner fra ide til ferdig produkt</p>
         </div>
     </section>
 </main>
-    
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 VÆR. All rights reserved.</p>
-        </div>
-    </footer>
 
     <script src="js/script.js"></script>
     <script src="js/slider.js"></script>
