@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('nav');
     const navLinks = document.querySelectorAll('nav a');
+    const overlay = document.querySelector('.nav-overlay');
     let isMenuOpen = false;
 
     function toggleMenu() {
@@ -9,6 +10,9 @@ document.addEventListener('DOMContentLoaded', function() {
         hamburger.classList.toggle('active');
         nav.classList.toggle('active');
         document.body.classList.toggle('menu-open');
+        if (overlay) {
+            overlay.classList.toggle('active');
+        }
     }
 
     // Toggle menu on hamburger click
@@ -39,12 +43,20 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Close menu when clicking outside
+    // Close menu when clicking outside or on overlay
     document.addEventListener('click', (e) => {
         if (isMenuOpen && !nav.contains(e.target) && !hamburger.contains(e.target)) {
             toggleMenu();
         }
     });
+
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            if (isMenuOpen) {
+                toggleMenu();
+            }
+        });
+    }
 
     // Close menu on scroll
     document.addEventListener('scroll', () => {
