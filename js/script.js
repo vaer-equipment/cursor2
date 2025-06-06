@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const hamburger = document.querySelector('.hamburger');
-    const nav = document.querySelector('nav');
-    const navLinks = document.querySelectorAll('nav a');
+    const nav = document.querySelector('.mobile-nav');
+    const navLinks = document.querySelectorAll('.mobile-nav a');
     const overlay = document.querySelector('.nav-overlay');
     let isMenuOpen = false;
 

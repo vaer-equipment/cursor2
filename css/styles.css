@@ -273,13 +273,15 @@ nav a::after {
     }
 
     nav.mobile-nav {
+        display: flex;
         position: fixed;
         top: 0;
         right: 0;
         width: 80%;
         max-width: 300px;
         height: 100vh;
-        background: rgba(0, 0, 0, 0.95);
+        background: #ffffff;
+        color: #000000;
         flex-direction: column;
         justify-content: center;
         align-items: center;
@@ -292,6 +294,10 @@ nav a::after {
     nav.mobile-nav ul {
         flex-direction: column;
         gap: 20px;
+    }
+
+    nav.mobile-nav a {
+        color: #000000;
     }
 
     nav.mobile-nav.active {
