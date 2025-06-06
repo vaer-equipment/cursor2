@@ -273,6 +273,22 @@ nav a::after {
         display: none;
     }
 
+    /* Center logo on mobile */
+    .header-container {
+        justify-content: center;
+        padding: 0;
+    }
+
+    .logo-container {
+        position: relative;
+        left: 0;
+        transform: none;
+    }
+
+    #logo {
+        height: 60px;
+    }
+
     /* Adjust spacing for mobile */
     .hero-content {
         padding: 15px 30px;
